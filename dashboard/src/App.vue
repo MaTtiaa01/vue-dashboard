@@ -1,5 +1,15 @@
 <script>
 
+import MonthlyConnection from './components/MonthlyConnection.vue';
+
+export default {
+    name: 'APP',
+    components: {
+        MonthlyConnection
+    }
+}
+
+
 </script>
 
 <template>
@@ -52,9 +62,8 @@
 
         <!-- main -->
         <main>
-
+            <MonthlyConnection></MonthlyConnection>
         </main>
-
 
 
     </section>
@@ -138,6 +147,13 @@
             }
 
         }
+    }
+
+    main {
+        position: absolute;
+        top: 100px;
+        left: 20vw;
+        width: 80vw;
     }
 }
 </style>
