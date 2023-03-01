@@ -6,21 +6,16 @@
     <section class="frame">
 
         <!-- navbar up -->
-        <nav class="navbar navbar-expand-sm navbar-light bg-light">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
-                aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavId">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                </ul>
+        <nav class="navbar px-4 navbar-expand-sm navbar-light bg-light d-flex align-items-center justify-content-between">
+            <div class="user">
+                <a href="#"><i class=" me-2 fa-solid fa-envelope"></i></a>
+                <a href="#"><i class="fa-solid fa-user"></i></a>
+            </div>
+            <div class="details d-flex align-items-center ">
+                <div class="profile_img me-3">
+                    <img src="./assets/img/profile.png" alt="">
+                </div>
+                <div> Welcome <br> <strong>Mattia Barbieri</strong> </div>
             </div>
         </nav>
 
@@ -74,18 +69,41 @@
     .navbar {
         position: absolute;
         top: 0;
-        left: 250px;
-        width: 100%;
+        left: 20vw;
         background-color: #f7f7f7;
+        width: 80vw;
+
+        .details {
+
+
+            .profile_img {
+                width: 60px;
+                border: 1px solid transparent;
+                border-radius: 50%;
+
+                img {
+                    border-radius: 50%;
+                }
+            }
+        }
+
+        .user {
+            a {
+                color: rgba(126, 43, 43, 0.611);
+                font-size: 30px;
+                margin-right: 1rem;
+            }
+        }
+
     }
 
     .sidebar {
-        width: 250px;
+        width: 20vw;
         background-color: #2a4054;
         position: absolute;
         top: 0;
         left: 0;
-        height: 1000px;
+        height: 100vh;
         color: white;
 
         .profile_img {
