@@ -13,8 +13,8 @@ export const store = reactive({
                 //console.log(response.data)
                 this.devices = response.data.Devices
                 this.monthlyConnections = response.data.MonthlyConnections
-                this.userAgeRange = response.data.UserAgeRange
-                console.log(this.monthlyConnections);
+                this.userAgeRange = response.data.UsersAgeRange
+                console.log(this.userAgeRange);
             })
             .catch((error) => {
                 console.log(error.message)

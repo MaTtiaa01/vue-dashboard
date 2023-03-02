@@ -42,8 +42,8 @@ export default {
                 //console.log(element)
                 os_data.push(element.os)
                 connections_data.push(element.connections)
-                console.log(os_data);
-                console.log(connections_data);
+                //console.log(os_data);
+                //console.log(connections_data);
 
             }
 
@@ -58,6 +58,30 @@ export default {
                 }
             })
         },
+        newBarChart() {
+            const range_data = []
+            const connections_data = []
+            for (let index = 0; index < this.store.userAgeRange.length; index++) {
+                const element = this.store.userAgeRange[index];
+                //console.log(element)
+                range_data.push(element.range)
+                connections_data.push(element.connections)
+                //console.log(range_data);
+                //console.log(connections_data);
+            }
+
+            new Chart(document.getElementById("barChart"), {
+                type: "bar",
+                data: {
+                    datasets: [{
+                        label: 'User Range Connections',
+                        data: connections_data
+
+                    }],
+                    labels: range_data
+                }
+            })
+        },
         wait(fun) {
             setTimeout(fun, 3000)
         }
@@ -66,16 +90,20 @@ export default {
         store.getData()
         this.wait(this.newLineChart)
         this.wait(this.newDoughnutChart)
+        this.wait(this.newBarChart)
     }
 }
 </script>
 
 <template>
-    <div class="container mb-3 d-flex justify-content-center">
-        <canvas id="myChart" style="width:100%;max-width:800px;"></canvas>
+    <div class="container px-2 mb-5 d-flex justify-content-center">
+        <canvas id="myChart"></canvas>
     </div>
-    <div class="container mb-3 d-flex justify-content-center">
-        <canvas id="doughChart" style="width:100%;max-width:800px;"></canvas>
+    <div class="container px-2 mb-5 d-flex justify-content-center">
+        <canvas id="doughChart"></canvas>
+    </div>
+    <div class="container px-2 mb-5 d-flex justify-content-center">
+        <canvas id="barChart"></canvas>
     </div>
 </template>
 

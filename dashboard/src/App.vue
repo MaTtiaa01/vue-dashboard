@@ -60,11 +60,11 @@ export default {
         </div>
 
 
+
         <!-- main -->
         <main>
             <MonthlyConnection></MonthlyConnection>
         </main>
-
 
     </section>
 </template>
@@ -74,6 +74,7 @@ export default {
 
 .frame {
     position: relative;
+    height: 100vh;
 
     .navbar {
         position: absolute;
@@ -154,6 +155,8 @@ export default {
         top: 100px;
         left: 20vw;
         width: 80vw;
+        overflow-y: scroll;
+        max-height: 85%;
     }
 }
 </style>
