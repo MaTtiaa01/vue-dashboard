@@ -134,7 +134,7 @@ export default {
 
     <div class="solar_power">
         <div class="play text-center">
-            <a class="btn " href="#" @click="this.solarChart()">GO! Solar Power</a>
+            <a class="btn " href="#" @click="this.solarChart()">GO! Solar Power <i class="fa-solid fa-play"></i></a>
         </div>
         <div class="container px-2 mb-5 d-flex justify-content-center">
             <canvas id="solarChart"></canvas>
