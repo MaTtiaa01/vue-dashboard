@@ -82,15 +82,41 @@ export default {
                 }
             })
         },
+        solarChart() {
+            const data = []
+            for (let index = 0; index < this.store.solar_power.length; index++) {
+                const element = this.store.solar_power[index];
+                let num = index + 1
+                let huor = num.toString()
+                //console.log(element)
+                data.push({ x: huor, y: element })
+                //console.log(data);
+            }
+
+            new Chart(document.getElementById("solarChart"), {
+                type: "line",
+                data: {
+                    datasets: [{
+                        label: 'Solar Power',
+                        data: data,
+                        fill: false,
+                        borderColor: 'rgb(75, 192, 192)',
+                        tension: 0.1
+                    }]
+                }
+            })
+        },
         wait(fun) {
             setTimeout(fun, 3000)
         }
     },
     mounted() {
         store.getData()
+        store.getSolarPower()
         this.wait(this.newLineChart)
         this.wait(this.newDoughnutChart)
         this.wait(this.newBarChart)
+        //this.wait(this.solarChart)
     }
 }
 </script>
@@ -105,6 +131,23 @@ export default {
     <div class="container px-2 mb-5 d-flex justify-content-center">
         <canvas id="barChart"></canvas>
     </div>
+
+    <div class="solar_power">
+        <div class="play text-center">
+            <a class="btn " href="#" @click="this.solarChart()">GO! Solar Power</a>
+        </div>
+        <div class="container px-2 mb-5 d-flex justify-content-center">
+            <canvas id="solarChart"></canvas>
+        </div>
+
+    </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.solar_power {
+    a {
+        color: black;
+        background-color: bisque;
+    }
+}
+</style>
