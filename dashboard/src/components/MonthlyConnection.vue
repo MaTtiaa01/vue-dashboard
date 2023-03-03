@@ -125,11 +125,15 @@ export default {
     <div class="container px-2 mb-5 d-flex justify-content-center">
         <canvas id="myChart"></canvas>
     </div>
-    <div class="container px-2 mb-5 d-flex justify-content-center">
-        <canvas id="doughChart"></canvas>
-    </div>
-    <div class="container px-2 mb-5 d-flex justify-content-center">
-        <canvas id="barChart"></canvas>
+
+    <div class="user_os d-flex align-items-center justify-content-center">
+        <div class="container px-2 mb-5 d-flex justify-content-center">
+            <canvas id="doughChart"></canvas>
+        </div>
+        <div class="container px-2 mb-5 d-flex justify-content-center">
+            <canvas id="barChart"></canvas>
+        </div>
+
     </div>
 
     <div class="solar_power">
